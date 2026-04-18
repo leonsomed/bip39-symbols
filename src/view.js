@@ -62,7 +62,9 @@ async function run() {
 
     result.sort((a, b) => a.word - b.word);
 
-    console.log(JSON.stringify(result, null, 2));
+    const text = result.map((n) => `[${n.bipWord}:${n.symbol}]`).join('');
+    console.log(text);
+    // console.log(JSON.stringify(result, null, 2));
   } else if (argSet.has(argList.recover)) {
     console.log('Running recover mode');
     // recovery: sort by symbol (easier to lookup symbols)
@@ -75,7 +77,9 @@ async function run() {
 
     result.sort((a, b) => a.symbol - b.symbol);
 
-    console.log(JSON.stringify(result, null, 2));
+    const text = result.map((n) => `[${n.symbol}:${n.bipWord}]`).join('');
+    console.log(text);
+    // console.log(JSON.stringify(result, null, 2));
   } else {
     throw new Error('Unsupported mode');
   }

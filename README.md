@@ -13,8 +13,8 @@ Here is a short guide:
 node src/generate.js
 # creates a new pseudo random map file with a seed from stdio
 node src/generate-deterministic.js
-# order by symbol
-node src/view.js --recover ./symbol-map-file
-# order by word
-node src/view.js --backup ./symbol-map-file
+# order by symbol for easy recovery
+node src/view.js --recover ./symbol-map-file > recover-map.txt
+# order by word for easy backup
+node src/view.js --backup ./symbol-map-file > backup-map.txt
 ```
