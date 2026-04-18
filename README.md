@@ -10,9 +10,9 @@ Here is a short guide:
 
 ```bash
 # creates a new random map file
-node src/generate.js
+node src/generate.js > symbol-map-file
 # creates a new pseudo random map file with a seed from stdio
-node src/generate-deterministic.js
+node src/generate-deterministic.js > deterministic-symbol-map-file
 # order by symbol for easy recovery
 node src/view.js --recover ./symbol-map-file > recover-map.txt
 # order by word for easy backup

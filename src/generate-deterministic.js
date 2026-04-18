@@ -1,4 +1,3 @@
-const fs = require('fs/promises');
 const { promptForInput } = require('./input');
 const { randomUInt16Factory } = require('./random');
 
@@ -40,11 +39,7 @@ async function run() {
     throw new Error(`Invalid run`);
   }
 
-  const filename = `symbol-map-deterministic-${new Date().toISOString()}-${Math.floor(
-    getRandomUInt16(1000) + 1000,
-  )}`;
-  await fs.writeFile(filename, JSON.stringify(arr));
-  console.log(`Created map symbol file: ${filename}`);
+  console.log(JSON.stringify(arr));
 }
 
 run();

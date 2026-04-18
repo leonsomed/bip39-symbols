@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-const fs = require('fs/promises');
 
 async function run() {
   const arr = Array.from({ length: 2048 }).map((_, i) => i + 1);
@@ -37,11 +36,7 @@ async function run() {
     throw new Error(`Invalid run`);
   }
 
-  const filename = `symbol-map-${new Date().toISOString()}-${Math.floor(
-    crypto.randomInt(1000) + 1000,
-  )}`;
-  await fs.writeFile(filename, JSON.stringify(arr));
-  console.log(`Created map symbol file: ${filename}`);
+  console.log(JSON.stringify(arr));
 }
 
 run();
